@@ -1,0 +1,19 @@
+{
+  "name": "vuechat-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ken3986/vuechat-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ken3986/vuechat-api/issues"
+  },
+  "homepage": "https://github.com/ken3986/vuechat-api#readme"
+}
