@@ -29,6 +29,8 @@ if(!admin.apps.length){
 }
 // ユーザーテーブルを参照
 const usersRef = admin.database().ref("users");
+// チャンネルノードを参照
+const channelsRef = admin.database().ref("channels");
 
 // Promiseでデータを取得する関数
 const getData = (ref) => {
@@ -59,6 +61,18 @@ router.get('/users', async(req, res) => {
   let users = await getData(usersRef);
   res.json(users);
 });
+  // チャンネル一覧の取得
+  router.get('/channels', (req, res) => {
+    channelsRef.once('value', function(snapshot) {
+      let items = new Array();
+      snapshot.forEach(function(childSnapshot) {
+        let cname = childSnapshot.key;
+        items.push(cname);
+      });
+      res.header('Content-Type', 'application/json; charset=utf-8');
+      res.send({channels: items});
+    });
+  });
 
 
 app.use('/.netlify/functions/express', router);
