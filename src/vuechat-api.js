@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 
 // CORS許可
-const cors = require('cors')({origin: true});
+const cors = require('cors');
 app.use(cors);
 
 // serverless-http導入
